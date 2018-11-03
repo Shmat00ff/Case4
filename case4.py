@@ -34,4 +34,3 @@ if text.isdigit() == 0:
         print("{}".format(easy))
 else:
     print("{}".format(ifint))
-text = input("{}".format(textinput))
