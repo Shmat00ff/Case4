@@ -2,16 +2,15 @@
 Разработчики: Шматов Денис, Баянова Анна
 
 """
+from ru_local4 import *
 
-text = input("Введите текст: ")
+text = input("{}".format(textinput))
 count_sentens = text.count('.')
 count_words = text.count(' ')+1
 count_syllables = 0
 if text.isdigit() == 0:
-    punctuation = ['(', ')', '?', ':', ',', '.', '!', '/', '"', "'", ' ']
     for i in punctuation:
-        text = text.replace(i,"")
-    vowels = ['а', 'о', 'и', 'е', 'ё', 'э', 'ы', 'у', 'ю', 'я', 'А', 'О', 'И', 'Е', 'Ё', 'Э', 'Ы', 'У', 'Ю', 'Я']
+        text = text.replace(i, "")
     for j in text:
         for i in vowels:
             if j == i:
@@ -19,19 +18,20 @@ if text.isdigit() == 0:
     ASL = count_words / count_sentens
     ASW = float(count_syllables) / float(count_words)
     FRE = 206.835 - (1.3 * ASL) - (60.1 * ASW)
-    print('Предложений:', count_sentens)
-    print('Слов:', count_words)
-    print('Слогов:', count_syllables)
-    print('Средняя длина предложения в словах:', ASL)
-    print('Средняя длина слова в слогах:', ASW)
-    print('Индекс удобочитаемости Флеша:', FRE)
+    print("{}".format(senteses), count_sentens)
+    print("{}".format(words), count_words)
+    print("{}".format(syllables), count_syllables)
+    print("{}".format(asl), ASL)
+    print("{}".format(asw), ASW)
+    print("{}".format(fre), FRE)
     if FRE < 26:
-        print('Текст трудно читается (для выпускников ВУЗов).')
+        print("{}".format(impossible))
     elif 25 < FRE < 51:
-        print('Текст немного трудно читать (для студентов).')
+        print("{}".format(hard))
     elif 50 < FRE < 80:
-        print('Простой текст (для школьников).')
+        print("{}".format(medium))
     elif FRE > 79:
-        print('Текст очень легко читается (для младших школьников).')
+        print("{}".format(easy))
 else:
-    print('Вы ввели число.')
+    print("{}".format(ifint))
+text = input("{}".format(textinput))
